@@ -1,3 +1,4 @@
+
 package com.fabric.types;
 
 public class Fabric {
@@ -6,10 +7,8 @@ public class Fabric {
 	double price;
 	String color;
 
-	@Override
-	public String toString() {
-		return "Textile [fabricname=" + fabricname + ", fid=" + fid + ", price=" + price + ", color=" + color + "]";
-	}
+
+	
 
 	public Fabric() {
 		super();
@@ -55,5 +54,8 @@ public class Fabric {
 	public void setColor(String color) {
 		this.color = color;
 	}
-
+	@Override
+	public String toString() {
+		return "Fabric [fabricname=" + fabricname + ", fid=" + fid + ", price=" + price + ", color=" + color + "]";
+	}
 }

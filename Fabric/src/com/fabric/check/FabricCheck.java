@@ -4,7 +4,7 @@ import com.fabric.exception.*;
 import com.fabric.types.Fabric;
 
 public class FabricCheck implements FabricInter {
-
+int i=0;
 	@Override
 	public Fabric[] getAll() {
 		// TODO Auto-generated method stub
@@ -12,65 +12,65 @@ public class FabricCheck implements FabricInter {
 	}
 
 	@Override
-	public Fabric getByColor(String col) throws ColorNotFoundException{
+	public Fabric[] getByColor(String col) throws ColorNotFoundException{
 		boolean flag = false;
-		Fabric fb = null;
+		Fabric fb[]=new Fabric[4];
 		for(Fabric fabrics:clothing()) {
 			if( fabrics.getColor().equals(col))
 			{
 				flag=true;
-				fb=fabrics;
+				fb[i]=fabrics;
 			}
 		}
-		if (flag == false)
+		if (flag==false)
 			throw new ColorNotFoundException("Invalid color");
 		return fb;
 		
 	}
 
 	@Override
-	public Fabric getByFname(String name) throws FabricNotAvailableException {
+	public Fabric[] getByFname(String name) throws FabricNotAvailableException {
 		boolean flag = false;
-		Fabric fn = null;
+		Fabric fn[] = new Fabric[4];
 		for(Fabric fabr:clothing()) {
 			if(fabr.getFabricname().equals(name))
 			{
 				flag=true;
-				fn=fabr;
+				fn[i]=fabr;
 			}
 		}
-		if (flag == false)
+		if (flag==false)
 			throw new FabricNotAvailableException("Fabric is not available");
 		return fn;
 	}
 
 	@Override
-	public Fabric getById(int id) throws IdNotFoundException {
+	public Fabric[] getById(int id) throws IdNotFoundException {
 		boolean flag = false;
-		Fabric fi = null;
+		Fabric fi[] = new Fabric[4];
 		for(Fabric fc:clothing()) {
 			if(fc.getFid()==id)
 			{
 				flag=true;
-				fi=fc;
+				fi[i]=fc;
 			}
 		}
-		if (flag == false)
+		if (flag==false)
 			throw new IdNotFoundException("Invalid id");
 		return fi;
 	}
 	@Override
-	public Fabric getByPrice(double pr) throws FabricNotAvailableException {
+	public Fabric[] getByPrice(double pr) throws FabricNotAvailableException {
 		boolean flag = false;
-		Fabric p = null;
+		Fabric p[] = new Fabric[4];
 		for(Fabric price:clothing()) {
 			if(price.getPrice()==pr)
 			{
 				flag=true;
-				price=p;
+				p[i]=price;
 			}
 		}
-		if (flag == false)
+		if (flag)
 			throw new FabricNotAvailableException("Fixed price no offer");
 		
 		return p;

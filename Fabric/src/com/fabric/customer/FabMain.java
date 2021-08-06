@@ -7,7 +7,7 @@ public class FabMain {
 
 	public static void main(String[] args)  {
 		FabricCheck fcheck=new FabricCheck();
-		System.out.println(fcheck.getAll());
+		
 		try {
 			System.out.println(fcheck.getByColor("Yellow"));
 		} catch (ColorNotFoundException e) {
